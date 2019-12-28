@@ -72,6 +72,28 @@ class _Game extends State<Game>{
     if(text[x] == "o") return Color(0xffff4d4d);
     else return Color(0xff31EA5C);
   }
+
+  void clickButton (int btnNum ){
+
+      if(!clicked[btnNum]){
+
+                       if (!b) {
+                         clicked[btnNum] = true;
+                         text[btnNum] = "x";
+                         b=!b;
+                       } else {
+                         clicked[btnNum] = true;
+                         text[btnNum] = "o";
+                         b=!b;
+                       }
+                       if(getWinner()==1 || getWinner() ==2){
+                         winner = getWinner().toString();
+                         ShowWinner(context);
+                         clicked = [true,true,true,true,true,true,true,true,true];
+                       }
+                     }
+
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -122,6 +144,7 @@ class _Game extends State<Game>{
                   ),
                   new Container(
                     child: FlatButton(
+                      onPressed: (){},
                       child:Text(""),
                       onLongPress: (){
                         setState(() {
@@ -162,23 +185,8 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                     if(!clicked[0]){
-
-                       if (!b) {
-                         clicked[0] = true;
-                         text[0] = "x";
-                         b=!b;
-                       } else {
-                         clicked[0] = true;
-                         text[0] = "o";
-                         b=!b;
-                       }
-                       if(getWinner()==1 || getWinner() ==2){
-                         winner = getWinner().toString();
-                         ShowWinner(context);
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                     }
+                      clickButton(0);
+                     
 
                     });
                   },child: Text(text[0], style: TextStyle(fontSize:55, color: Colors.white ),),),
@@ -194,23 +202,7 @@ class _Game extends State<Game>{
 
                     onPressed: (){
                     setState(() {
-                      if(!clicked[1]){
-                        if (!b) {
-                          clicked[1] = true;
-                          text[1] = "x";
-                          b=!b;
-                        } else {
-                          clicked[1] = true;
-                          text[1] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                      clickButton(1);
                     });
                   },child: Text(text[1], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -224,23 +216,7 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                      if(!clicked[2]){
-                        if (!b) {
-                          clicked[2] = true;
-                          text[2] = "x";
-                          b=!b;
-                        } else {
-                          clicked[2] = true;
-                          text[2] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                      clickButton(2);
                     });
                   },child: Text(text[2], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -264,23 +240,7 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                      if(!clicked[3]){
-                        if (!b) {
-                          clicked[3] = true;
-                          text[3] = "x";
-                          b=!b;
-                        } else {
-                          clicked[3] = true;
-                          text[3] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                      clickButton(3);
                     });
                   },child: Text(text[3], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -293,23 +253,7 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                      if(!clicked[4]){
-                        if (!b) {
-                          clicked[4] = true;
-                          text[4] = "x";
-                          b=!b;
-                        } else {
-                          clicked[4] = true;
-                          text[4] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                      clickButton(4);
                     });
                   },child: Text(text[4], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -323,23 +267,7 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                      if(!clicked[5]){
-                        if (!b) {
-                          clicked[5] = true;
-                          text[5] = "x";
-                          b=!b;
-                        } else {
-                          clicked[5] = true;
-                          text[5] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                      clickButton(5);
                     });
                   },child: Text(text[5], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -359,23 +287,7 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                      if(!clicked[6]){
-                        if (!b) {
-                          clicked[6] = true;
-                          text[6] = "x";
-                          b=!b;
-                        } else {
-                          clicked[6] = true;
-                          text[6] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                      clickButton(6);
                     });
                   },child: Text(text[6], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -388,23 +300,7 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                      if(!clicked[7]){
-                        if (!b) {
-                          clicked[7] = true;
-                          text[7] = "x";
-                          b=!b;
-                        } else {
-                          clicked[7] = true;
-                          text[7] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                     clickButton(7);
                     });
                   },child: Text(text[7], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -418,23 +314,7 @@ class _Game extends State<Game>{
                 new AnimatedContainer(
                   child:FlatButton(onPressed: (){
                     setState(() {
-                      if(!clicked[8]){
-                        if (!b) {
-                          clicked[8] = true;
-                          text[8] = "x";
-                          b=!b;
-                        } else {
-                          clicked[8] = true;
-                          text[8] = "o";
-                          b=!b;
-                        }
-                        if(getWinner()==1 || getWinner() ==2){
-                          winner = getWinner().toString();
-                          ShowWinner(context);
-
-                         clicked = [true,true,true,true,true,true,true,true,true];
-                       }
-                      }
+                      clickButton(8);
                     });
                   },child: Text(text[8], style: TextStyle(fontSize:55, color: Colors.white ),),),
                   duration: Duration(milliseconds: 200),
@@ -469,6 +349,7 @@ class _Game extends State<Game>{
                 children: <Widget>[
                   new Container(
                     child: FlatButton(
+                      onPressed: (){} ,
                       child:Text(""),
                       onLongPress: (){
                         setState(() {
